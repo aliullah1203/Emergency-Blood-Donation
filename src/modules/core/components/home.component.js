@@ -10,12 +10,6 @@ function Home({ user }) {
   return (
     <>
       <div className="container mt-5">
-        <h1 className="text-center mb-4 text-danger">
-          Welcome to the Home Page
-        </h1>
-      </div>
-
-      <div className="container mt-5">
         <h1 className="text-center mb-4 text-danger">Welcome, {user}</h1>
         <div className="row g-4">
           <MyRequest />

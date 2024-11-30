@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Feature() {
   return (
@@ -16,9 +17,9 @@ function Feature() {
             Explore other functionalities of this platform.
           </p>{" "}
           <br />
-          <a href="#" className="btn btn-danger w-100">
+          <Link className="btn btn-danger w-100" to="/features">
             Explore
-          </a>
+          </Link>
         </div>
       </div>
     </div>

@@ -2,6 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+  const logOut = () => {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("email");
+    window.location.href = "/";
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -45,6 +53,16 @@ function Navbar() {
               <Link className="nav-link" to="/features">
                 Features
               </Link>
+            </li>
+
+            <li className="nav-item">
+              <p
+                className="nav-link"
+                style={{ cursor: "pointer" }}
+                onClick={logOut}
+              >
+                Logout
+              </p>
             </li>
           </ul>
         </div>

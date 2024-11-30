@@ -1,20 +1,22 @@
 import React, { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useNavigate } from "react-router-dom";
 
-function Login ({ setUser }) {
+function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
 
-  const handleLogin = e => {
+  const handleLogin = (e) => {
     e.preventDefault();
 
     if (email === "aliullah0301@gmail.com" && password === "aliullah") {
-      setUser(email);
-      localStorage.setItem("isLoggedIn", "true")
-      localStorage.setItem("email", email)
-    } 
-    else alert("Invalid email or password. Please try again.");
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("email", email);
+
+      navigate("/");
+    } else alert("Invalid email or password. Please try again.");
   };
 
   return (
@@ -57,7 +59,10 @@ function Login ({ setUser }) {
           </button>
         </form>
         <p className="mt-3 text-center">
-          Don't have an account? <a href="#" className="text-danger">Sign Up</a>
+          Don't have an account?{" "}
+          <a href="#" className="text-danger">
+            Sign Up
+          </a>
         </p>
       </div>
     </div>
