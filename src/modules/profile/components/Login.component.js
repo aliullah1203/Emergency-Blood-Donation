@@ -16,6 +16,11 @@ function Login() {
       localStorage.setItem("email", email);
 
       navigate("/");
+    } else if (email === "aliullah@gmail.com" && password === "aliullah") {
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("email", email);
+
+      navigate("/");
     } else alert("Invalid email or password. Please try again.");
   };
 

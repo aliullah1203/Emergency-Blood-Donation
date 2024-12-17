@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 
 function DonorRegistration() {
@@ -14,9 +15,13 @@ function DonorRegistration() {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Donor Information Submitted:", formData);
+    const res = await axios.post(
+      "http://localhost:5001/api/donors/add/add-donor",
+      formData
+    );
     alert("Form submitted successfully!");
     setFormData({
       name: "",
